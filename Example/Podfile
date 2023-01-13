@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'TTNetKit_Example' do
+  pod 'TTNetKit', :path => '../'
+
+  target 'TTNetKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

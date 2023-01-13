@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
+  - "NSObject+Rx (5.2.2)":
+    - RxSwift (~> 6.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxOptional (5.0.2):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - TTNetKit (1.0.0):
+    - Moya/RxSwift (~> 15.0)
+    - "NSObject+Rx (= 5.2.2)"
+    - RxCocoa (= 6.5.0)
+    - RxOptional (= 5.0.2)
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+
+DEPENDENCIES:
+  - TTNetKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - "NSObject+Rx"
+    - RxCocoa
+    - RxOptional
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  TTNetKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  TTNetKit: 6a1955b1a8c5b6c6a9df0767adf76749600147af
+
+PODFILE CHECKSUM: bede57ec46b7dfebdab7267c97f649c92f8bcbb5
+
+COCOAPODS: 1.11.3
