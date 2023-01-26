@@ -31,6 +31,28 @@ class ViewController: UIViewController {
     }
 }
 
+class MyPlugin: Moya.PluginType {
+    func willSend(_ request: RequestType, target: TargetType) {
+        
+    }
+    
+    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 enum LoginProvider: String {
     case login = ""

@@ -16,7 +16,7 @@ open class TTNetworking<T:TargetType>: NSObject {
         case post
     }
     
-    let provider = MoyaProvider<T>.init()
+    let provider = MoyaProvider<T>(plugins: [], trackInflights: false)
     public func request(_ target: T) -> Single<Response> {
         return provider.rx.request(target, callbackQueue: .main)
     }

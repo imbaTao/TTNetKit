@@ -33,9 +33,8 @@ TODO: Add long description of the pod here.
   s.source_files = 'TTNetKit/**/*'
   s.dependency 'Moya/RxSwift', '~> 15.0'
   s.dependency 'RxSwift',"6.5.0"
-  s.dependency 'RxCocoa',"6.5.0"
   s.dependency 'NSObject+Rx',"5.2.2"
   s.dependency 'RxOptional',"5.0.2"
-  #  s.dependency 'RxGesture',"4.0.4"
   s.dependency 'RxRelay',"6.5.0"
+  s.dependency 'HandyJSON'
 end
