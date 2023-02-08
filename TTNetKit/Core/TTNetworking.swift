@@ -15,10 +15,17 @@ open class TTNetworking<T:TargetType>: NSObject {
         case get
         case post
     }
+
+    var provider:MoyaProvider<T>!
     
-    let provider = MoyaProvider<T>(plugins: [], trackInflights: false)
-    public func request(_ target: T) -> Single<Response> {
-        return provider.rx.request(target, callbackQueue: .main)
+    public init(_ plugins: [PluginType]) {
+        super.init()
+        provider = MoyaProvider<T>(plugins: plugins)
+        
+    }
+    
+    public func request(_ target: T) -> Observable<Response> {
+        return provider.rx.request(target, callbackQueue: .main).asObservable()
     }
 }
 
