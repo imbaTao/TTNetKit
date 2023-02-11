@@ -32,3 +32,15 @@ open class TTNetworking<T:TargetType>: NSObject {
 
 
 
+public struct TTNetError: Error {
+    public var code: Int
+    public var message: String
+    public init(code: Int, message: String) {
+        self.code = code
+        self.message = message
+    }
+}
+
+
+
+
