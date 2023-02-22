@@ -12,14 +12,14 @@ import NSObject_Rx
 
 open class TTNetworking<T:TargetType>: NSObject {
    public private(set) var provider:MoyaProvider<T>!
-    public init(_ plugins: [PluginType]) {
+    public init(_ plugins: [PluginType],_ customSession: Session? = nil) {
         super.init()
-        provider = MoyaProvider<T>(plugins: plugins)
+        if let customSession = customSession {
+            provider = MoyaProvider<T>.init(session: customSession, plugins: plugins)
+        }else {
+            provider = MoyaProvider<T>.init(plugins: plugins)
+        }
     }
-    
-//    open func request(_ target: T) -> Observable<Response> {
-//        return provider.rx.request(target, callbackQueue: .main).asObservable()
-//    }
 }
 
 
