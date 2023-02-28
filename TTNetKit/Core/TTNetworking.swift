@@ -23,8 +23,6 @@ open class TTNetworking<T:TargetType>: NSObject {
 }
 
 
-
-
 public struct TTNetError: Error {
     public var code: Int
     public var message: String

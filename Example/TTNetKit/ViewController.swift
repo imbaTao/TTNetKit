@@ -11,18 +11,14 @@ import TTNetKit
 import Moya
 
 class ViewController: UIViewController {
-    let loginNet = TTNetworking<LoginProvider>()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginNet.request(.login).subscribe { response in
-            print("response is \(response.data),\(response.statusCode)")
-        } onFailure: { error in
-            
-        } onDisposed: {
-            
-        }.disposed(by: rx.disposeBag)
+        // 目前的想法
+        
+        /**
+         默认环境的设置，切换，自动切换
+         1.
+         */
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,59 +27,29 @@ class ViewController: UIViewController {
     }
 }
 
-class MyPlugin: Moya.PluginType {
-    func willSend(_ request: RequestType, target: TargetType) {
-        
-    }
-    
-    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-        
-    }
-    
+
+//class TTRuntimeGlobalConfig {
+//    var netConfig = TTNetWorkingGlobalConfig()
+//}
+
+
+enum TTNetWorkingScence {
+    case develop // 开发环境
+    case test// 测试环境
+    case release // 线上环境
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-enum LoginProvider: String {
-    case login = ""
+class TTNetWorkingGlobalConfig: NSObject {
+    static let share = TTNetWorkingGlobalConfig.init(scences: [.develop : .init()])
+    var scences = [TTNetWorkingScence : TTNetWorkingGlobalConfigItem]()
+    init(scences: [TTNetWorkingScence : TTNetWorkingGlobalConfigItem]) {
+        super.init()
+        self.scences = scences
+    }
 }
 
-extension LoginProvider: TargetType {
-    var baseURL: URL {
-        return .init(string: "https://www.baidu.com")!
-    }
-    
-    var path: String {
-        return self.rawValue
-    }
-    
-    var method: Moya.Method {
-        switch self {
-        case .login:
-            return .get
-        }
-    }
-    
-    var task: Moya.Task {
-        return .requestPlain
-    }
-    
-    var headers: [String : String]? {
-        return nil
-    }
-    
-    
+// 具体配置模型
+struct TTNetWorkingGlobalConfigItem {
+    var baseHost = ""
+//    var basePort = 443
 }
-
-
-
